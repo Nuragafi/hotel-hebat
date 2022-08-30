@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hotel Hebat</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="hotel.png" />
+    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/kwitansi.css') }}" rel="stylesheet">
+</head>
+
+<body onload="window.print()">
+    <div id="invoice">
+        <div class="invoice overflow-auto">
+            <div style="min-width: 600px">
+                <header>
+                    <div class="row">
+                        <div class="col">
+                            <a target="_blank" href="/">
+                                <img src="{{ asset('images/hotel.png') }}" alt="" width="100" height="100">
+                            </a>
+                        </div>
+                        <div class="col company-details">
+                            <h2 class="name">
+                                <a target="_blank" href="" style="color: #333">
+                                    Hotel Hebat
+                                </a>
+                            </h2>
+                            <div class="mt-3">(123) 456-789</div>
+                            <div>hotel-hebat@gmail.com</div>
+                        </div>
+                    </div>
+                </header>
+                <main>
+                    <div class="row contacts">
+                        <div class="col invoice-to">
+                            <h2 class="to">{{ $reservasi->client->nama }}</h2>
+                            <div class="email"><a href="">{{ $reservasi->client->email }}</a>
+                                <div class="email">{{ $reservasi->client->telpon }}</a>
+                                </div>
+                            </div>
+                            <div class="col invoice-details">
+                                <h1 class="invoice-id">Pemesanan</h1>
+                                <div class="date"></div>
+                            </div>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="text-center">JUMLAH</th>
+                                    <th class="text-center">TIPE KAMAR</th>
+                                    <th class="text-center">CHEECK IN</th>
+                                    <th class="text-center">CHECK OUT</th>
+                                    <th class="text-center">TOTAL HARGA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">{{ $reservasi->jumlahKamar }}</td>
+                                    <td class="text-center">
+                                        <strong>{{ $reservasi->kamar->jeniskamar->jeniskamar }}</strong>
+                                    </td>
+                                    <td class="text-center">{{ $reservasi->mulai }}</td>
+                                    <td class="text-center">{{ $reservasi->selesai }}</td>
+                                    <td class="text-center">Rp {{ $reservasi->total }},-</td>
+                                </tr>
+                                </tfoot>
+                        </table>
+                        <div class="mt-4 mb-2">Thank you!</div>
+                        <div class="notices">
+                            <div>NOTICE:</div>
+                            <div class="notice">Pastikan berada di hotel kami 30 menit sebelum check in.</div>
+                        </div>
+                </main>
+                <footer>
+                    Bukti pemesanan kamar Hotel Hebat - Cirebon - Indonesia.
+                </footer>
+            </div>
+            <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>

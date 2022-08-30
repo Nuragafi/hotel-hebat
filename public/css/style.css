@@ -1,0 +1,68 @@
+.navbar a{
+    color: #333;
+}
+
+.navbar a:hover{
+    color: #333;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+input:focus,
+input:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif!important;
+}
+
+.btn:active {
+  transform: scale(0.9);
+  transition: all 0.2s;
+}
+
+#navbar {
+    z-index: 500;
+  }
+  
+  #navbar .nav-navbar {
+    height: 10vh;
+  }
+  
+  #navbar a {
+    text-decoration: none;
+    font-size: 17px;
+    z-index: 300;
+  }
+  
+  #navbar ul li {
+    margin-right: 25px;
+  }
+  
+  #navbar ul li a {
+    display: inline-block;
+    margin-right: 10px;
+    transition: all 0.3s;
+    color: grey;
+  }
+  
+  #navbar ul li a:hover {
+    color: black;
+  }
+  
+  #navbar .active {
+    color: black;
+  }
+
+  .kami{
+    text-align: center;
+    max-width: 400px;
+  }
+  
+ 
